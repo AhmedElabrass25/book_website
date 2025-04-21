@@ -49,7 +49,7 @@ const BookContextProvider = ({ children }: Props) => {
       setBooks(data?.items || []);
       setError(null);
     } catch (err: unknown) {
-      setError("Failed to fetch books");
+      console.log(err, "Failed to fetch books");
     } finally {
       setLoading(false);
     }
