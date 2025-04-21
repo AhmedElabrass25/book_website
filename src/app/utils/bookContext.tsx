@@ -9,7 +9,7 @@ export interface BookContextType {
   setSearchText: (text: string) => void;
   searchText: string;
   loading: boolean;
-  error: any;
+  error: string | null;
   fetchBooks: () => void;
   currentPage: number;
   setCurrentPage: (page: number) => void;
@@ -48,8 +48,8 @@ const BookContextProvider = ({ children }: Props) => {
       console.log(data?.items);
       setBooks(data?.items || []);
       setError(null);
-    } catch (err: any) {
-      setError(err.message || "Failed to fetch books");
+    } catch (err: unknown) {
+      setError("Failed to fetch books");
     } finally {
       setLoading(false);
     }
