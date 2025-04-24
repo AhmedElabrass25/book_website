@@ -13,8 +13,8 @@ const RobotoFont = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Car App",
-  description: "Disover the best car in the world !",
+  title: "Books App",
+  description: "Search books !",
 };
 
 export default function RootLayout({
